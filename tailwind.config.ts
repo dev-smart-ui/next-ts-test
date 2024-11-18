@@ -9,8 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        'color-primary': '#1f2937',
+        'color-border': '#e5e7eb',
+        'color-link': '#000084',
+      },
+      boxShadow: {
+        'default': '0 0 6px 2px #00000030',
       },
     },
   },
