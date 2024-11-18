@@ -41,7 +41,11 @@ export const MainMenu = ({
               <Link 
                 key={href} 
                 href={href} 
-                className={`sm:ml-3 flex items-center gap-0.5 ${href == pathname ? 'font-bold pointer-events-none' : ''}`}>
+                className={classNames(
+                  'flex items-center gap-0.5 px-3 py-1.5 rounded-lg',
+                  {'font-bold pointer-events-none bg-black': href == pathname}
+                )}
+              >
                 <Image src={icon} alt="" />
                 {title}
               </Link>
