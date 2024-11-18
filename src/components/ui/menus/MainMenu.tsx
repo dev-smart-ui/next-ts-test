@@ -21,28 +21,26 @@ export const mainMenuPages: iMainMenu[] = [
 ];
 
 export const MainMenu = ({ 
-  isMenuActive, 
-  onClose
+  isMenuActive
 }: {
-  isMenuActive: boolean, 
-  onClose: () => void
+  isMenuActive: boolean
 }) => {
   const pathname = usePathname();
 
   return (
     <div className={classNames(
-      'fixed top-0 left-0 w-full h-full bg-black sm:bg-transparent px-4 py-10 sm:p-0 sm:static opacity-0 pointer-events-none duration-300 sm:opacity-100 sm:pointer-events-auto',
+      'fixed top-[48px] left-0 w-full h-full bg-color-primary sm:bg-transparent px-4 py-10 sm:p-0 sm:static opacity-0 pointer-events-none duration-300 sm:opacity-100 sm:pointer-events-auto border-t border-color-border sm:border-none',
       {'opacity-100 pointer-events-auto': isMenuActive}
     )}>
       <div className="flex items-center">
-        <nav className="flex gap-5 flex-col sm:flex-row">
+        <nav className="flex gap-2 flex-col sm:flex-row w-full">
           { mainMenuPages ? mainMenuPages.map(({ title, href, icon }) => {
             return (
               <Link 
                 key={href} 
                 href={href} 
                 className={classNames(
-                  'flex items-center gap-0.5 px-3 py-1.5 rounded-lg',
+                  'flex items-center justify-center gap-0.5 px-3 py-3 sm:py-1.5 rounded-lg w-full',
                   {'font-bold pointer-events-none bg-black': href == pathname}
                 )}
               >
@@ -52,12 +50,6 @@ export const MainMenu = ({
             )
           }) : null }
         </nav>
-
-        <button className="block sm:hidden ml-auto" onClick={onClose}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-        </button>
       </div>
     </div>
   )

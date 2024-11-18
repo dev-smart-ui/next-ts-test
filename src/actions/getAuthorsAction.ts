@@ -7,10 +7,10 @@ import { iUserData } from "@/components/cards/UserCard";
 // Fetching users list
 export const getAuthorsAction = async (): Promise<iUserData[] | undefined> => {
   try {
-    const request = await fetch(`https://jsonplaceholder.typicode.com/users/`);    
-    const user = await request.json();
+    const request = await fetch(`${process.env.APP_URL}/data/users.json`); 
+    const users = await request.json();
 
-    return user
+    return users
   } catch(err) {
     console.log(err);
   }

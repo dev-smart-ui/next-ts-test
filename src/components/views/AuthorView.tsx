@@ -44,12 +44,11 @@ export const AuthorView = async ({ id }: { id: string }) => {
         </div>
 
         <Image 
-          src="https://thispersondoesnotexist.com/" 
+          src={author.photo} 
           width={300} 
           height={300} 
           alt="" 
           className="sm:ml-auto rounded-full w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]"
-          unoptimized
         />
       </div>
 
