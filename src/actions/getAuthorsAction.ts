@@ -5,9 +5,12 @@ import { iUserData } from "@/components/cards/UserCard";
 
 // SERVER ACTION
 // Fetching users list
-export const getAuthorsAction = async (): Promise<iUserData[] | undefined> => {
+export const getAuthorsAction = async (): Promise<iUserData[] | null | undefined> => {
   try {
     const request = await fetch(`${process.env.APP_URL}/data/users.json`); 
+
+    if (request.status !== 200) return null;
+
     const users = await request.json();
 
     return users

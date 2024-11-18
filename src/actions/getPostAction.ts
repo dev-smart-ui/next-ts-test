@@ -18,6 +18,6 @@ export const getPostAction = async (targetId: string | number): Promise<iPostDat
 
     return post
   } catch(err) {
-    //console.log(err);
+    console.log(err);
   }
 }
