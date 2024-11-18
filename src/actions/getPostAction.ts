@@ -6,7 +6,7 @@ import { iPostData } from "@/components/cards/PostCard";
 // Fetching post
 export const getPostAction = async (targetId: string | number): Promise<iPostData | null | undefined> => {
   try {    
-    const request = await fetch(`${process.env.APP_URL}/data/posts.json`);  
+    const request = await fetch(`${process.env.APP_URL || 'http://localhost:3000/'}/data/posts.json`);  
 
     if (request.status !== 200) return null;
     
