@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import type { Metadata } from "next";
 import "./globals.css";
+import { PageTransition } from "@/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Next App",
@@ -23,6 +24,8 @@ export default function RootLayout({
           </div>
         </main>
         <Footer />
+
+        <PageTransition />
       </body>
     </html>
   );
